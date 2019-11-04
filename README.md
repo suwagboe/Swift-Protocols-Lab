@@ -253,6 +253,37 @@ protocol Flyable {
 }
 ```
 
+
+```
+// my code is below
+
+struct Penguin: Bird {
+var name: String  {
+return "Penguin"
+}
+var canFly: Bool {
+    return false
+    }
+    var isItCute: String 
+}
+
+//
+struct Eagle: Bird, Flyable{
+// Bird protocol
+var name: String {
+    return "Eagle"
+}
+var canFly: Bool {
+    return true
+}
+
+// Flyable protocol
+var airspeedVelocity: Double{
+return 34.2
+}
+}
+```
+
 </br> </br>
 
 ## Question 4
