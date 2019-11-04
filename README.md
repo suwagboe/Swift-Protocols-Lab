@@ -286,14 +286,33 @@ return 34.2
 
 </br> </br>
 
-## Question 4
+## Question 4 NEED HELP
 
 a. Create a protocol called `Transformation`.  The protocol should specify a mutating method called transform
 
+```
+protocol Transformation {
+
+mutating func transform()
+
+}
+```
+
 b. Make an enum called `SuperHero` that conforms to `Transformation` with cases `notHulk` and `hulk`
 
+```
+enum SuperHero: Transformation {
+
+case notHulk
+case hulk 
+
+}
+
+```
 c. Create an instance of it named `bruceBanner`. Make it so that when the transform function is called that bruceBanner turns from
 `.notHulk` to `.hulk.``
+
+``` STILL DO NOT UNDERSTAND```
 
 ```swift
 enum SuperHero: Transformation {
@@ -308,24 +327,130 @@ bruceBanner.transform() . // hulk
 bruceBanner.transform()  // notHulk
 ```
 
+```
+my code is below:
+var bruceBanner = SuperHero.notHulk
+
+```
 </br> </br>
 
 
 ## Question 5
 
 a. Create a protocol called `Communication`
+```
+protocol Communitcation{
 
+}
+```
 b. Give it a property called `message`, of type String, and assign it an explicit getter.
+```
+protocol Communication {
+var message: String { get }
+}
+```
 
 c. Create three Classes. `Cow`, `Dog`, `Cat`.
+```
+protocol Communitaction { 
+var message: String { get }
+}
+class Cow{
+
+}
+
+class Dog{
+
+}
+
+class Cat {
+
+}
+```
 
 d. Have your three classes conform to `Communication`
 
+```
+protocol Communication {
+var message: String { get }
+}
+
+class Cow: Communication{
+}
+
+class Dog: Communication{
+}
+
+class Cat: Communication{
+}
+
+```
+
 e. `message` should return a unique message for each animal when talk is called.
+
+```
+protocol Communication {
+var message: String { get }
+}
+
+class Cow: Communication{
+var message: String {
+return "MOOOO"
+    }
+}
+
+class Dog {
+var message {
+    return "ROOF ROOF"
+}
+}
+
+class Cat {
+var message: String {
+return "MEOW"
+}
+}
+
+
+```
 
 f. Put an instance of each of your classes in an array.
 
+```
+protocol Communication {
+var message: String { get }
+}
+
+class Cow: Communication{
+var message: String {
+return "Moo"
+}
+}
+
+class Dog: Communication{
+var message {
+return "ROOF"
+}
+}
+
+class Cat: Communication{
+var message {
+return "Meow"
+}
+}
+
+var spottedAnimal = Cow.Communication
+var notMyBestFriend = Dog.Communication
+var myBestFriend = Cat.Communication
+
+var animalsArr = [spottedAnimal, notMyBestFriend, myBestFriend]
+```
+
 g. Iterate over the array and have them print their `message` property
+
+```
+??????????????????????
+```
 
 
 ## Question 6
