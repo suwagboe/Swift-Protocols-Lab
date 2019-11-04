@@ -153,23 +153,87 @@ if human1 < human2 {
 }
 
 ```
-</br> </br>
-
-
 ## Question 2
 
 a. Create a protocol called `Vehicle` with two requirements:
 - a nonsettable `numberOfWheels` property of type Int,
 - a function called drive().
 
+```
+protocol Vehicle{
+ var numbersOFWheels : Int { get }
+
+func drive()
+}
+```
+
 b. Define a `Car` struct that implements the `Vehicle` protocol. `numberOfWheels` should return a value of 4,
 and drive() should print "Vroom, vroom!" Create an instance of `Car`, print its number of wheels,
 then call drive().
+```
+protocol Vehicle{
+ var numbersOFWheels : Int { get }
+
+func drive()
+}
+
+struct Car: Vehicle{
+
+var numberOfWheels: Int {
+return 4
+}
+
+func drive() {
+return "Vroom, Vroom"
+}
+
+}
+
+var thisCar = Car()
+
+thisCar.drive()
+```
 
 c. Define a Bike struct that implements the `Vehicle` protocol. `numberOfWheels` should return a value of 2,
 and drive() should print "Begin pedaling!". Create an instance of Bike, print its number of wheels,
 then call drive().
 
+```
+protocol Vehicle{
+ var numbersOFWheels : Int { get }
+
+func drive()
+}
+
+struct Car: Vehicle{
+var numbersOFWheels: Int {
+return 4
+}
+
+func drive() {
+print("Vroom, Vroom")
+    }
+}
+
+struct Bike: Vehicle {
+var numbersOFWheels: Int {
+    return 2}
+
+func drive(){
+print("Begin pedaling!")
+    }
+
+}
+
+var thisCar = Car()
+
+thisCar.drive()
+
+var thisBike = Bike()
+
+thisBike.drive()
+
+```
 </br> </br>
 
 
