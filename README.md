@@ -72,14 +72,46 @@ print("human1")
 print("zarriah)
 
 ```
-
-
-
 c. Make the `Human` class adopt the Equatable protocol. Two instances of `Human` should be considered equal
 if their names and ages are identical to one another. Print the result of a boolean expression
 evaluating whether or not your two previously initialized `Human` objects are equal to eachother
 (using ==). Then print the result of a boolean expression evaluating whether or not your two
 previously initialized `Human` objects are not equal to eachother (using !=).
+
+```
+class Human: CustomStringConvertible, Equatable {
+    static func == (lhs: Human, rhs: Human) -> Bool {
+        return lhs.name == rhs.name && lhs.age == rhs.age
+    }
+    var age: Int
+    var name: String
+    
+    var description: String {
+            return "The person's name is \(name) and they are \(age) years young"
+        }
+        
+    init(name: String, age: Int){
+        self.name = name
+        self.age = age
+    }
+}
+
+
+var human1 = Human(name: "Shaniya", age: 22)
+var zarriah = Human(name: "Zarriah", age: 22)
+
+print(human1)
+print(zarriah)
+
+
+if human1 == zarriah {
+    print("They are the same person... shocker")
+}else{
+    print("These are two different people")
+}
+
+```
+
 
 d. Make the `Human` class adopt the `Comparable` protocol. One `Human` is greater than another `Human` if its age is bigger. Create another
 three instances of a `Human`, then create an array called people of type [`Human`] with all of the
@@ -87,6 +119,40 @@ three instances of a `Human`, then create an array called people of type [`Human
 
 Create a new array called sortedPeople of type [`Human`] that is the people array sorted by age.
 
+```
+class Human: CustomStringConvertible, Comparable {
+var name: String
+var age: Int
+
+static func > (lhs: Human, rhs: Human) -> Bool {
+return lhs.age > rhs.age
+}
+
+
+static func < (lhs: Human, rhs: Human) -> Bool {
+return lhs.age < rhs.age
+}
+
+var description: String {
+return "The person's name is \(name) and they are \(age) years young"
+}
+
+init(name: String, age: String){
+self.name = name
+self.age = age
+    }
+}
+
+var human1 = Human(name: "Shaniya", age: 22)
+var zarriah = Human(name: "Zarriah", age: 22)
+
+if human1 < human2 {
+    print("\(human1) is older then \(human2)")
+} else {
+    print("\(human2) is older")
+}
+
+```
 </br> </br>
 
 
