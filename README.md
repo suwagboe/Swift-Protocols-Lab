@@ -22,10 +22,58 @@ a. Create a `Human` class with two properties:
 - `name` of type String
 - `age` of type Int.
 
+```
+class Human {
+var name: String 
+var age: Int
+}
+```
+
 Then create an initializer for the class and create two `Human` instances.
+
+```
+class Human {
+  var age: Int
+  var name: String
+  init(name: String, age: Int) {
+    self.name = name
+    self.age = age
+  }
+}
+
+// creating instances 
+var shaniya = Human(name: "Shaniya", age: 22)
+var zarriah = Human(name: "Zarriah", age: 22)
+
+```
 
 b. Make the `Human` class adopt the CustomStringConvertible protocol. Then print both of your previously initialized
 `Human` objects.
+
+```
+class Human: CustomStringConvertible {
+var age: Int
+var name: String
+
+init(name: String, age: Int){
+self.name = name
+self.age = age 
+}
+
+var description: String {
+return "The person's name is \(name) and they are \(old) years young"
+}
+}
+
+var human1 = Human(name: "Shaniya", age: 22)
+var zarriah = Human(name: "Zarriah", age: 22)
+
+print("human1")
+print("zarriah)
+
+```
+
+
 
 c. Make the `Human` class adopt the Equatable protocol. Two instances of `Human` should be considered equal
 if their names and ages are identical to one another. Print the result of a boolean expression
